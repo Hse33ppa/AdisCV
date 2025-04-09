@@ -4,169 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <style>
-        /* Import Amarante font */
-        @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
-
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Amarante', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #D6BD98;
-            background-color: #0A1919;
-            overflow-x: hidden;
-        }
-
-        /* Main Content */
-        .main-content {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Side Navigation */
-        .side-nav {
-            position: fixed;
-            top: 0;
-            left: -200px;
-            width: 200px;
-            height: 100vh;
-            background-color: #1A3636;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-            transition: left 0.3s ease-in-out;
-            z-index: 100;
-            padding-top: 60px;
-        }
-
-        .side-nav.active {
-            left: 0;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .nav-links li {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-links a {
-            color: #D6BD98;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* Navigation Toggle Button */
-        .nav-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #1A3636;
-            color: #D6BD98;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 101;
-            transition: color 0.3s;
-        }
-
-        .nav-toggle:hover {
-            color: white;
-        }
-
-        /* Introduction Section */
-        #intro {
-            height: 100vh;
-            background-color: #0A1919;
-            color: #D6BD98;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        #intro h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-        }
-
-        #intro p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0A1919;
-            color: #D6BD98;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-contact-item i {
-            margin-right: 1rem;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #D6BD98;
-        }
-
-        /* Content Area */
-        .content-area {
-            padding: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                right: -100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Side Navigation Toggle Button -->
@@ -177,54 +17,69 @@
     <!-- Side Navigation -->
     <nav class="side-nav" id="side-nav">
         <ul class="nav-links">
-            <li><a href="#" class="nav-btn" data-page="intro">Home</a></li>
-            <li><a href="#" class="nav-btn" data-page="qualifications">Qualifications</a></li>
-            <li><a href="#" class="nav-btn" data-page="skills">Skills</a></li>
-            <li><a href="#" class="nav-btn" data-page="leadership">Leadership</a></li>
-            <li><a href="#" class="nav-btn" data-page="mun">Model United Nations</a></li>
-            <li><a href="#" class="nav-btn" data-page="hireme">Why should you hire me?</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="qualifications.html">Qualifications</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="mun.html">Model United Nations</a></li>
+            <li><a href="hireme.html">Why should you hire me?</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content" id="main-content">
         <!-- Introduction Section -->
         <section id="intro">
             <h1>Adithyanarayan Rajesh</h1>
             <p>Award-winning Model UN delegate and student-leader committed to driving global progress through diplomacy and civic innovation. With strategic roles in student governance and community initiatives. Merging intellectual rigor with empathetic action, I transform policy ideas into more than just ideas.</p>
         </section>
+    </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-contact">
-                <div class="footer-contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>052-694-7410</span>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>adithyakanattu@gmail.com</span>
-                </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>052-694-7410</span>
             </div>
-        </footer>
-    </div>
-
-    <!-- Content Area -->
-    <div class="content-area" id="content-area">
-        <!-- Content will be loaded here dynamically -->
-    </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>adithyakanattu@gmail.com</span>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Add Font Awesome for icons
-        const fontAwesome = document.createElement('link');
-        fontAwesome.rel = 'stylesheet';
-        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
-        document.head.appendChild(fontAwesome);
-
         // Side Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const sideNav = document.getElementById('side-nav');
-        const contentArea = document.getElementById('content-area');
+        const mainContent = document.getElementById('main-content');
 
         navToggle.addEventListener('click', function() {
-            sideNav.classList.toggle('
+            sideNav.classList.toggle('active');
+        });
+
+        // Hide navigation when mouse leaves
+        sideNav.addEventListener('mouseleave', function() {
+            setTimeout(() => {
+                if (!sideNav.matches(':hover')) {
+                    sideNav.classList.remove('active');
+                }
+            }, 300);
+        });
+
+        // Load content dynamically
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                fetch(href)
+                    .then(response => response.text())
+                    .then(data => {
+                        mainContent.innerHTML = data;
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
