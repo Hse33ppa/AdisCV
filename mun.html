@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model United Nations - Portfolio</title>
+    <style>
+        /* Import Amarante font */
+        @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
 
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amarante', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #D6BD98;
+            background-color: #0A1919;
+            overflow-x: hidden;
+        }
+
+        /* Main Content */
+        .main-content {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Side Navigation */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100vh;
+            background-color: #1A3636;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease-in-out;
+            z-index: 100;
+            padding-top: 60px;
+        }
+
+        .side-nav.active {
+            left: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a {
+            color: #D6BD98;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Navigation Toggle Button */
+        .nav-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #1A3636;
+            color: #D6BD98;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            transition: color 0.3s;
+        }
+
+        .nav-toggle:hover {
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #D6BD98;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0A1919;
+            color: #D6BD98;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact-item i {
+            margin-right: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Navigation Toggle Button -->
+    <button class="nav-toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="side-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="qualifications.html" target="_blank">Qualifications</a></li>
+            <li><a href="skills.html" target="_blank">Skills</a></li>
+            <li><a href="leadership.html" target="_blank">Leadership</a></li>
+            <li><a href="mun.html" target="_blank">Model United Nations</a></li>
+            <li><a href="hireme.html" target="_blank">Why should you hire me?</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <section>
+            <h2>Model United Nations</h2>
+            <div class="mun-content">
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Deputy Secretary General, PBSMUN 2025</strong></li>
+                    <li><strong>Best Researcher, WESMUN 2025 (ECOSOC Committee)</strong></li>
+                    <li><strong>Delegate, WINMUN 2025 (GA3)</strong></li>
+                    <li><strong>Honorable Mention, WSDMUN 2025 (UNSC)</strong></li>
+                    <li><strong>Participant, EISJMUN 2025 (ICoJ)</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>052-694-7410</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>adithyakanattu@gmail.com</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add Font Awesome for icons
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+
+        // Side Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const sideNav = document.getElementById('side-nav');
+
+        navToggle.addEventListener('click', function() {
+            sideNav.classList.toggle('active');
+        });
+
+        // Hide navigation when mouse leaves
+        sideNav.addEventListener('mouseleave', function() {
+            setTimeout(() => {
+                if (!sideNav.matches(':hover')) {
+                    sideNav.classList.remove('active');
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html>
