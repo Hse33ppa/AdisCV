@@ -154,6 +154,15 @@
             color: #D6BD98;
         }
 
+        /* Content Container */
+        .content-container {
+            display: none;
+        }
+
+        .content-container.active {
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
@@ -172,61 +181,32 @@
     <!-- Side Navigation -->
     <nav class="side-nav" id="side-nav">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="qualifications.html" target="_blank">Qualifications</a></li>
-            <li><a href="skills.html" target="_blank">Skills</a></li>
-            <li><a href="leadership.html" target="_blank">Leadership</a></li>
-            <li><a href="mun.html" target="_blank">Model United Nations</a></li>
-            <li><a href="hireme.html" target="_blank">Why should you hire me?</a></li>
+            <li><a href="#" class="nav-btn" data-page="intro">Home</a></li>
+            <li><a href="#" class="nav-btn" data-page="qualifications">Qualifications</a></li>
+            <li><a href="#" class="nav-btn" data-page="skills">Skills</a></li>
+            <li><a href="#" class="nav-btn" data-page="leadership">Leadership</a></li>
+            <li><a href="#" class="nav-btn" data-page="mun">Model United Nations</a></li>
+            <li><a href="#" class="nav-btn" data-page="hireme">Why should you hire me?</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Introduction Section -->
-        <section id="intro">
+        <section id="intro" class="content-container active">
             <h1>Adithyanarayan Rajesh</h1>
             <p>Award-winning Model UN delegate and student-leader committed to driving global progress through diplomacy and civic innovation. With strategic roles in student governance and community initiatives. Merging intellectual rigor with empathetic action, I transform policy ideas into more than just ideas.</p>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-contact">
-                <div class="footer-contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>052-694-7410</span>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>adithyakanattu@gmail.com</span>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        // Add Font Awesome for icons
-        const fontAwesome = document.createElement('link');
-        fontAwesome.rel = 'stylesheet';
-        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
-        document.head.appendChild(fontAwesome);
-
-        // Side Navigation Toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const sideNav = document.getElementById('side-nav');
-
-        navToggle.addEventListener('click', function() {
-            sideNav.classList.toggle('active');
-        });
-
-        // Hide navigation when mouse leaves
-        sideNav.addEventListener('mouseleave', function() {
-            setTimeout(() => {
-                if (!sideNav.matches(':hover')) {
-                    sideNav.classList.remove('active');
-                }
-            }, 300);
-        });
-    </script>
-</body>
-</html>
+        <!-- Qualifications Section -->
+        <section id="qualifications" class="content-container">
+            <h2>Qualifications</h2>
+            <div class="qualifications-content">
+                <h3>Adithyanarayan Rajesh</h3>
+                <p>Currently pursuing A-Levels in Physics, Mathematics, and Biology at Pace British School, Sharjah, following a transition from an Indian curriculum—a shift that reshaped my analytical thinking and academic adaptability.</p>
+                
+                <h3 style="margin-top: 1.5rem;">Key Achievements:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Predicted Grade B in all A-Level subjects in my maiden year in the British curriculum.</li>
+                    <li>Elected Head Boy of the Student Council within my inaugural year, leading initiatives to enhance student engagement and equity.</li>
+                    <li>Appointed Deputy Secretary-General for the inaugural PBS-MUN conference, cur
