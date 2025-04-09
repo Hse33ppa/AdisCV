@@ -19,7 +19,7 @@
         body {
             line-height: 1.6;
             color: #D6BD98;
-            background-color: #0A1919;
+            background-color: #1A3636;
             overflow-x: hidden;
         }
 
@@ -67,7 +67,6 @@
             color: white;
         }
 
-        /* Navigation Toggle Button */
         .nav-toggle {
             position: fixed;
             top: 20px;
@@ -106,7 +105,7 @@
 
         /* Footer */
         footer {
-            background-color: #0A1919;
+            background-color: #1A3636;
             color: #D6BD98;
             padding: 2rem;
             text-align: center;
@@ -147,63 +146,58 @@
     <nav class="side-nav" id="side-nav">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="qualifications.html" target="_blank">Qualifications</a></li>
-            <li><a href="skills.html" target="_blank">Skills</a></li>
-            <li><a href="leadership.html" target="_blank">Leadership</a></li>
-            <li><a href="mun.html" target="_blank">Model United Nations</a></li>
-            <li><a href="hireme.html" target="_blank">Why should you hire me?</a></li>
+            <li><a href="qualifications.html">Qualifications</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="mun.html">Model United Nations</a></li>
+            <li><a href="hireme.html">Why should you hire me?</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content" id="main-content">
         <section>
             <h2>Why should you hire me?</h2>
             <div class="hireme-content">
                 <p>I would call myself the Swiss army knife of people, as I believe myself to be a versatile professional with a unique blend of analytical, leadership, and creative skills, honed through diverse experiences in diplomacy, event management, and technical problem-solving.</p>
-                
+
                 <h4 style="margin-top: 1rem;">Multidisciplinary Expertise</h4>
                 <p>From spearheading award-winning Model UN initiatives to coding data-driven solutions in Python, I bridge policy, technology, and community engagement. Recognized as Best Researcher at WESMUN and Second Best Delegate at EISJMUN, I combine rigorous analysis with persuasive communication.</p>
-                
+
                 <h4 style="margin-top: 1rem;">Proven Leadership</h4>
                 <p>Founded and scaled a Model UN club, trained 20+ delegates, and led sustainability projects like school gardens and beach cleanups, removing 35 kgs of waste through collaborations with organizations like Bee’ah.</p>
-                
+
                 <h4 style="margin-top: 1rem;">Operational Excellence</h4>
                 <p>Orchestrated large-scale events for 200+ attendees and designed inventory systems that boosted organizational efficiency.</p>
-                
+
                 <h4 style="margin-top: 1rem;">Cultural Agility</h4>
                 <p>Fluent in 4 languages (Hindi, Urdu, Malayalam, English) with conversational Tamil and advancing German, I navigate cross-cultural environments with ease.</p>
-                
+
                 <p style="margin-top: 1rem;">I thrive in dynamic settings where strategic thinking, collaboration, and innovation intersect. Let’s connect to discuss how my skills can drive measurable impact for your team.</p>
                 <p>Credentials backed by awards, leadership roles, and a relentless drive to turn ideas into action.</p>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-contact">
-                <div class="footer-contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>052-694-7410</span>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>adithyakanattu@gmail.com</span>
-                </div>
-            </div>
-        </footer>
     </div>
 
-    <script>
-        // Add Font Awesome for icons
-        const fontAwesome = document.createElement('link');
-        fontAwesome.rel = 'stylesheet';
-        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
-        document.head.appendChild(fontAwesome);
+    <!-- Footer -->
+    <footer>
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>052-694-7410</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>adithyakanattu@gmail.com</span>
+            </div>
+        </div>
+    </footer>
 
+    <script>
         // Side Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const sideNav = document.getElementById('side-nav');
+        const mainContent = document.getElementById('main-content');
 
         navToggle.addEventListener('click', function() {
             sideNav.classList.toggle('active');
@@ -216,6 +210,19 @@
                     sideNav.classList.remove('active');
                 }
             }, 300);
+        });
+
+        // Load content dynamically
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                fetch(href)
+                    .then(response => response.text())
+                    .then(data => {
+                        mainContent.innerHTML = data;
+                    });
+            });
         });
     </script>
 </body>
