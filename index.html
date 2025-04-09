@@ -154,13 +154,9 @@
             color: #D6BD98;
         }
 
-        /* Content Container */
-        .content-container {
-            display: none;
-        }
-
-        .content-container.active {
-            display: block;
+        /* Content Area */
+        .content-area {
+            padding: 2rem;
         }
 
         /* Responsive Design */
@@ -193,20 +189,42 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- Introduction Section -->
-        <section id="intro" class="content-container active">
+        <section id="intro">
             <h1>Adithyanarayan Rajesh</h1>
             <p>Award-winning Model UN delegate and student-leader committed to driving global progress through diplomacy and civic innovation. With strategic roles in student governance and community initiatives. Merging intellectual rigor with empathetic action, I transform policy ideas into more than just ideas.</p>
         </section>
 
-        <!-- Qualifications Section -->
-        <section id="qualifications" class="content-container">
-            <h2>Qualifications</h2>
-            <div class="qualifications-content">
-                <h3>Adithyanarayan Rajesh</h3>
-                <p>Currently pursuing A-Levels in Physics, Mathematics, and Biology at Pace British School, Sharjah, following a transition from an Indian curriculum—a shift that reshaped my analytical thinking and academic adaptability.</p>
-                
-                <h3 style="margin-top: 1.5rem;">Key Achievements:</h3>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li>Predicted Grade B in all A-Level subjects in my maiden year in the British curriculum.</li>
-                    <li>Elected Head Boy of the Student Council within my inaugural year, leading initiatives to enhance student engagement and equity.</li>
-                    <li>Appointed Deputy Secretary-General for the inaugural PBS-MUN conference, cur
+        <!-- Footer -->
+        <footer>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>052-694-7410</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>adithyakanattu@gmail.com</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area" id="content-area">
+        <!-- Content will be loaded here dynamically -->
+    </div>
+
+    <script>
+        // Add Font Awesome for icons
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+
+        // Side Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const sideNav = document.getElementById('side-nav');
+        const contentArea = document.getElementById('content-area');
+
+        navToggle.addEventListener('click', function() {
+            sideNav.classList.toggle('
